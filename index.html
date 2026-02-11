@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday 🎉</title>
+<title>Happyyyyyyyyy Birthddddddday 🥳🎁🎊🎉</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+
 
 <style>
-/* ===== BODY + BACKGROUND ===== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -17,209 +19,242 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #fff6c1, #fffbe6);
+  background: linear-gradient(135deg, #5c4033, #3e2723);
   position: relative;
 }
 
-/* 🎊 Floating confetti background */
+/* Floating subtle dots */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(circle, #ff4d6d 2px, transparent 2px), /* pink */
-    radial-gradient(circle, #4dabf7 2px, transparent 2px), /* blue */
-    radial-gradient(circle, #9775fa 3px, transparent 3px), /* purple */
-    radial-gradient(circle, #51cf66 2px, transparent 2px), /* green */
-    radial-gradient(circle, #ffd43b 3px, transparent 3px); /* yellow */
-  background-size:
-    80px 80px,
-    120px 120px,
-    160px 160px,
-    100px 100px,
-    140px 140px;
-  animation: floatConfetti 20s linear infinite;
-  opacity: 0.45;   /* medium opacity */
+    radial-gradient(circle, #d7ccc8 2px, transparent 2px),
+    radial-gradient(circle, #a1887f 2px, transparent 2px);
+  background-size: 120px 120px;
+  animation: floatBg 25s linear infinite;
+  opacity: 0.2;
   z-index: 0;
 }
-
-@keyframes floatConfetti {
-  from { background-position: 0 0, 0 0, 0 0; }
-  to   { background-position: 0 800px, 0 1200px, 0 1600px; }
+@keyframes floatBg {
+  from { background-position: 0 0; }
+  to { background-position: 0 1200px; }
 }
 
-/* ===== GREETING ===== */
+/* 🎁 Hidden Gift Background */
+#giftBackground {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  display: none;
+}
+
+.giftItem {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.25;
+  animation: floatGift linear infinite;
+}
+
+@keyframes floatGift {
+  from { transform: translateY(-100px) rotate(0deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* Greeting */
 #greeting {
   position: fixed;
-  top: 40px;
+  top: 80px;
   width: 100%;
   text-align: center;
   font-family: 'Great Vibes', cursive;
   font-size: 64px;
-  color: #d4a900;
+  color: #f5e6d3;
   z-index: 100;
-  pointer-events: none;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s;
 }
 #greeting.hide { opacity: 0; }
 
-/* ===== START SCREEN ===== */
+/* Start Screen */
 #startScreen {
   position: fixed;
   inset: 0;
-  background: rgba(255,247,200,0.95);
+  background: rgba(62,39,35,0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 50;
 }
-#startScreen button {
-  padding: 18px 40px;
+
+/* Buttons */
+button {
+  margin-top: 22px;
+  padding: 14px 34px;
   border-radius: 40px;
   border: none;
-  background: #ffd84d;
-  font-size: 20px;
-  font-weight: bold;
+  background: linear-gradient(135deg, #8d6e63, #6d4c41);
+  color: #fff8f0;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* ===== MUSIC ===== */
+button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.6);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Music */
 #musicControl {
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 120;
-  padding: 10px 18px;
-  border-radius: 22px;
-  border: none;
-  background: #ffd84d;
-  font-size: 15px;
-  cursor: pointer;
   display: none;
 }
 
-/* ===== CURTAINS ===== */
+/* Curtains */
+/* ===== TEXTURED VELVET CURTAINS ===== */
+/* ===== SILKY SATIN CURTAINS ===== */
 .curtain {
   position: fixed;
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(135deg, #ffe680, #fff2b3);
+
+  background:
+    /* soft silk shine layer */
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0.4) 0%,
+      rgba(255,255,255,0.1) 20%,
+      rgba(0,0,0,0.15) 40%,
+      rgba(255,255,255,0.2) 60%,
+      rgba(0,0,0,0.2) 80%,
+      rgba(255,255,255,0.15) 100%
+    ),
+    /* base satin color */
+    linear-gradient(135deg, #6d4c41, #3e2723);
+
+  background-blend-mode: overlay;
+
+  box-shadow:
+    inset -20px 0 35px rgba(0,0,0,0.35),
+    inset 20px 0 35px rgba(0,0,0,0.35);
+
+  transition: transform 2s cubic-bezier(.77,0,.18,1);
   z-index: 10;
-  transition: transform 2s ease-in-out;
 }
+
 .curtain.left { left: 0; }
 .curtain.right { right: 0; }
+
 .curtain.open.left { transform: translateX(-100%); }
 .curtain.open.right { transform: translateX(100%); }
 
-/* ===== COUNTDOWN ===== */
+
+/* Countdown */
 #countdown {
   position: fixed;
   inset: 0;
-  background: rgba(255,247,200,0.95);
+  background: rgba(62,39,35,0.95);
   display: none;
   justify-content: center;
   align-items: center;
   font-size: 90px;
   font-weight: 700;
-  color: #d4a900;
+  color: #f5e6d3;
   z-index: 20;
 }
 
-/* ===== BOXES ===== */
+/* Boxes */
 .card, .page {
-  background: white;
-  padding: 48px;
-  border-radius: 28px;
+  background: linear-gradient(145deg, #f5e6d3, #e8d5c4);
+  padding: 52px;
+  border-radius: 30px;
   text-align: center;
   width: 92%;
-  max-width: 520px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
+  max-width: 560px;
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.4),
+    inset 0 2px 10px rgba(255,255,255,0.6);
   display: none;
   z-index: 30;
 }
+
 .card.show { display: block; }
 
-/* ===== BUTTONS ===== */
-button {
-  margin-top: 22px;
-  padding: 14px 32px;
-  border-radius: 36px;
-  border: none;
-  background: #ffd84d;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 17px;
-}
-
 .option {
-  margin-top: 24px;
-  padding: 18px;
-  border-radius: 22px;
-  background: #fff2b3;
+  margin-top: 26px;
+  padding: 20px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d7ccc8, #bcaaa4);
   cursor: pointer;
-  font-weight: 600;
   font-size: 18px;
 }
 
-/* ===== NOTE ===== */
-.note {
-  text-align: left;
-  font-size: 17px;
-  line-height: 1.8;
-  color: #555;
+/* Angry */
+#angry {
+  font-size: 120px;
+  margin: 20px 0;
 }
 
-/* ===== PHOTOS ===== */
+/* Photos */
 .photoContainer {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  margin-top: 42px;
+  gap: 28px;
+  margin-top: 40px;
 }
 
 .popPhoto {
-  width: 40vw;
+  width: 42vw;
   max-width: 360px;
-  height: 58vw;
+  height: 60vw;
   max-height: 480px;
   object-fit: cover;
-  border-radius: 20px;
-  cursor: pointer;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
   opacity: 0;
-  transform: scale(0.6) rotate(-3deg);
+  transform: scale(0.6) rotate(-4deg);
   animation: popIn 0.7s ease forwards;
 }
 .popPhoto.right {
-  transform: scale(0.6) rotate(4deg);
+  transform: scale(0.6) rotate(5deg);
   animation-delay: 0.25s;
 }
-
 @keyframes popIn {
   to { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-/* ===== FULLSCREEN ===== */
-#fullscreen {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
+.note {
+  text-align: left;
+  font-family: 'Parisienne', cursive;
+  font-size: 20px;
+  line-height: 2;
+  color: #3e2723;
+  letter-spacing: 0.7px;
+  padding: 20px;
+  background: linear-gradient(145deg, #f5e6d3, #e8d5c4);
+  border-radius: 18px;
 }
-#fullscreen img {
-  max-width: 95%;
-  max-height: 95%;
-}
+
 </style>
 </head>
 
 <body>
 
-<div id="greeting">Good Morning</div>
+<div id="giftBackground"></div>
+
+<div id="greeting">Good Morning Chuha 🌅 💐</div>
 
 <div id="startScreen">
   <button onclick="startExperience()">Start the Surprise 🎉</button>
@@ -229,43 +264,70 @@ button {
 
 <div class="curtain left"></div>
 <div class="curtain right"></div>
-
 <div id="countdown">3</div>
 
 <div class="card" id="card">
-  <h2>🎉 Happy Birthdayyyy 🎉</h2>
-  <p>Something special is waiting 💛</p>
-  <button onclick="goToSurprises()">Surprise 🎁</button>
+  <h2>🎉 Happppieeeee Birthdayyyy🥳🎁🎈🎊 🎉</h2>
+  <button onclick="goToChoice()">Continue ➡️</button>
+</div>
+
+<div class="page" id="choicePage">
+  <h2>Do you want a surprise? ☺️</h2>
+  <button onclick="yesSurprise()">YES 😍</button>
+  <button onclick="noSurprise()">NO 🙄</button>
+</div>
+<!-- QUIZ PAGE -->
+<!-- QUIZ PAGE -->
+<div class="page" id="quizPage">
+  <h2 id="questionText"></h2>
+
+  <div id="optionsBox" style="
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:20px;
+  "></div>
+
+  <p id="quizMessage" style="
+    margin-top:18px;
+    font-weight:600;
+    color:#6d4c41;
+  "></p>
+</div>
+
+<div class="page" id="angryPage">
+  <div id="angry">😡</div>
+  <p>seriouslyyy 🥺</p>
+  <button onclick="backToChoice()">⬅ Back</button>
 </div>
 
 <div class="page" id="surprisePage">
   <h2>✨ Choose Your Surprise ✨</h2>
   <div class="option" onclick="openNote()">💌 Surprise 1</div>
   <div class="option" onclick="openPhotos()">🎁 Surprise 2</div>
-  <button onclick="backToCard()">⬅ Back</button>
+  <button onclick="backToChoice()">⬅ Back</button>
 </div>
 
 <div class="page" id="notePage">
   <h2>💖 A Little Note For You 💖</h2>
   <div class="note">
-    <p>Dear <strong>Chuhaaa</strong>,</p>
-    <p>You bring warmth, laughter, and comfort in ways you don’t even realize.</p>
-    <p>Always remember: you are deeply appreciated and endlessly loved 💛</p>
+    <p>Hellooo <strong>Babyyyy</strong>,</p>
+    <p>Happy birthdayy May this year be filled with lots of luck, success and lots of happinesss</p>
+    <p>On your Birthday i want you to know that i will always be there for you and i will never leave you . I am so grateful for everything you do Thank you so much for understanding me and never leaving me. Ninge gotilla esht important you are in my life anta You are one of the reasons for my happiness ,miss you🥺 and love youuuuuuuuu😘</p>
+<p>Thank you for surviving another year of my drama. Really appreciate it 😁</p>
+<p>Yours Lovingly,<p>
+<p><strong>Carrots</strong>,</p>
   </div>
-  <button onclick="backToSurprises()">⬅ Back</button>
+  <button onclick="backToSurpriseMenu()">⬅ Back</button>
 </div>
 
 <div class="page" id="photoPage">
-  <h2>📸 Little Memories 💛</h2>
+  <h2>📸 Little Memories🥰💛</h2>
   <div class="photoContainer">
-    <img src="photo1.jpg" class="popPhoto" onclick="openFullscreen(this)">
-    <img src="photo2.jpg" class="popPhoto right" onclick="openFullscreen(this)">
+    <img src="photo1.jpg" class="popPhoto">
+    <img src="photo2.jpg" class="popPhoto right">
   </div>
-  <button onclick="backToSurprises()">⬅ Back</button>
-</div>
-
-<div id="fullscreen" onclick="closeFullscreen()">
-  <img id="fullImg">
+  <button onclick="backToSurpriseMenu()">⬅ Back</button>
 </div>
 
 <audio id="music" loop>
@@ -279,28 +341,54 @@ const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicControl");
 const greeting = document.getElementById("greeting");
 
+function blastConfetti() {
+  confetti({
+    particleCount: 180,
+    spread: 120,
+    startVelocity: 45,
+    gravity: 0.9,
+    origin: { y: 0.6 }
+  });
+}
+
+function startGiftBackground() {
+  const bg = document.getElementById("giftBackground");
+  bg.style.display = "block";
+  const emojis = ["🎁","🎈","🎂","🎊"];
+  for (let i = 0; i < 25; i++) {
+    const item = document.createElement("div");
+    item.classList.add("giftItem");
+    item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.animationDuration = (8 + Math.random() * 10) + "s";
+    item.style.fontSize = (20 + Math.random() * 25) + "px";
+    bg.appendChild(item);
+  }
+}
+
 function startExperience() {
-  document.getElementById("startScreen").style.display = "none";
-  document.getElementById("countdown").style.display = "flex";
-
+  startScreen.style.display = "none";
+  countdown.style.display = "flex";
   let c = 3;
-  document.getElementById("countdown").textContent = c;
-
+  countdown.textContent = c;
   const t = setInterval(() => {
     c--;
     if (c === 0) {
       clearInterval(t);
-      document.getElementById("countdown").style.display = "none";
+      countdown.style.display = "none";
       openCurtains();
-    } else {
-      document.getElementById("countdown").textContent = c;
-    }
+    } else countdown.textContent = c;
   }, 1000);
 }
 
 function openCurtains() {
   document.querySelector(".curtain.left").classList.add("open");
   document.querySelector(".curtain.right").classList.add("open");
+
+  blastConfetti();
+  setTimeout(blastConfetti, 400);
+
+  startGiftBackground();   // 🎁 starts here
 
   music.play();
   musicBtn.style.display = "block";
@@ -309,58 +397,136 @@ function openCurtains() {
   setTimeout(() => {
     greeting.textContent = "Happy Birthday";
     greeting.classList.remove("hide");
-  }, 1300);
+  }, 1200);
 
-  confetti({ particleCount: 140, spread: 80 });
-
-  setTimeout(() => {
-    document.getElementById("card").classList.add("show");
-  }, 1500);
+  setTimeout(() => card.classList.add("show"), 1500);
 }
 
 function toggleMusic() {
-  if (music.paused) {
-    music.play();
-    musicBtn.textContent = "⏸️ Stop Music";
-  } else {
-    music.pause();
-    musicBtn.textContent = "▶️ Play Music";
-  }
+  music.paused ? music.play() : music.pause();
 }
 
-function goToSurprises() {
-  document.getElementById("card").style.display = "none";
-  document.getElementById("surprisePage").style.display = "block";
+function goToChoice() {
+  card.style.display = "none";
+  choicePage.style.display = "block";
+}
+
+function yesSurprise() {
+  choicePage.style.display = "none";
+  quizPage.style.display = "block";
+  currentQuestion = 0;
+  loadQuestion();
+}
+
+
+function noSurprise() {
+  choicePage.style.display = "none";
+  angryPage.style.display = "block";
+}
+
+function backToChoice() {
+  angryPage.style.display = "none";
+  surprisePage.style.display = "none";
+  choicePage.style.display = "block";
 }
 
 function openNote() {
-  document.getElementById("surprisePage").style.display = "none";
-  document.getElementById("notePage").style.display = "block";
+  surprisePage.style.display = "none";
+  notePage.style.display = "block";
+
+  // Hide the greeting (Happy Birthday)
+  greeting.classList.add("hide");
 }
+
 
 function openPhotos() {
-  document.getElementById("surprisePage").style.display = "none";
-  document.getElementById("photoPage").style.display = "block";
-  confetti({ particleCount: 120, spread: 70, shapes: ['heart'], colors: ['#ff4d6d','#ff85a1'] });
+  surprisePage.style.display = "none";
+  photoPage.style.display = "block";
+
+  // ✨ Hide the greeting when Surprise 2 is opened
+  greeting.classList.add("hide");
+
+  // Optional: completely remove it instead of just fading
+  // greeting.style.display = "none";
+}
+/* ===== QUIZ LOGIC ===== */
+
+const quizData = [
+  {
+    question: "What is my favourite thing to do ? 😌",
+    options: ["Sleep", "Eating food", "Talking to chuha", " Dancing"],
+    correct: 2
+  },
+  {
+    question: "Who misses you the most? 🤎",
+    options: ["Friends", "Carrots", "Nobody", "Family"],
+    correct: 1
+  },
+  {
+    question: "What do i like in you? ",
+    options: ["Smile", "Cooking", "Caring ", "None😁"],
+    correct: 3
+  }
+];
+
+let currentQuestion = 0;
+
+function yesSurprise() {
+  choicePage.style.display = "none";
+  quizPage.style.display = "block";
+  currentQuestion = 0;
+  loadQuestion();
 }
 
-function backToSurprises() {
-  document.getElementById("notePage").style.display = "none";
-  document.getElementById("photoPage").style.display = "none";
-  document.getElementById("surprisePage").style.display = "block";
+function loadQuestion() {
+  quizMessage.innerText = "";
+  const q = quizData[currentQuestion];
+  questionText.innerText = q.question;
+  optionsBox.innerHTML = "";
+
+  q.options.forEach((option, index) => {
+    const btn = document.createElement("button");
+    btn.innerText = option;
+    btn.style.marginTop = "12px";
+    btn.style.width = "70%";
+    btn.style.maxWidth = "320px";
+    btn.onclick = () => checkAnswer(index);
+    optionsBox.appendChild(btn);
+  });
 }
 
-function backToCard() {
-  document.getElementById("surprisePage").style.display = "none";
-  document.getElementById("card").style.display = "block";
+function checkAnswer(selectedIndex) {
+
+  if (selectedIndex === quizData[currentQuestion].correct) {
+
+    quizMessage.style.color = "green";
+    quizMessage.innerText = "Correct 🤎";
+
+    setTimeout(() => {
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        quizPage.style.display = "none";
+        surprisePage.style.display = "block";
+        blastConfetti();
+      }
+
+    }, 800);
+
+  } else {
+    quizMessage.style.color = "red";
+    quizMessage.innerText = "Wrong answer 😁 Try again!";
+  }
 }
 
-function openFullscreen(img) {
-  document.getElementById("fullImg").src = img.src;
-  document.getElementById("fullscreen").style.display = "flex";
-}
-function closeFullscreen() {
-  document.getElementById("fullscreen").style.display = "none";
+
+
+function backToSurpriseMenu() {
+  notePage.style.display = "none";
+  photoPage.style.display = "none";
+  surprisePage.style.display = "block";
 }
 </script>
 
