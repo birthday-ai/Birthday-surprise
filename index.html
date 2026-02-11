@@ -70,7 +70,7 @@ body::before {
   width: 100%;
   text-align: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 64px;
+  font-size: 50px;
   color: #f5e6d3;
   z-index: 100;
   transition: opacity 1s;
@@ -234,11 +234,20 @@ button:active {
 @keyframes popIn {
   to { opacity: 1; transform: scale(1) rotate(0deg); }
 }
+.mainTitle {
+  font-size: 28px;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 
 .note {
   text-align: left;
   font-family: 'Parisienne', cursive;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 2;
   color: #3e2723;
   letter-spacing: 0.7px;
@@ -254,7 +263,7 @@ button:active {
 
 <div id="giftBackground"></div>
 
-<div id="greeting">Good Morning Chuha 🌅 💐</div>
+<div id="greeting">Good Morning 🌅 💐</div>
 
 <div id="startScreen">
   <button onclick="startExperience()">Start the Surprise 🎉</button>
@@ -267,8 +276,10 @@ button:active {
 <div id="countdown">3</div>
 
 <div class="card" id="card">
-  <h2>🎉 Happppieeeee Birthdayyyy🥳🎁🎈🎊 🎉</h2>
-  <button onclick="goToChoice()">Continue ➡️</button>
+ <h2 class="mainTitle">🎉 Happppieeeee Birthdayyyy🥳🎁🎈🎊 🎉</h2>
+<h2 class="subTitle">Something special is waiting for you🤍</h2>
+
+  <button onclick="goToChoice()">Surprise 🎁</button>
 </div>
 
 <div class="page" id="choicePage">
